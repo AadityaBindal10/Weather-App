@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> My Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- NAVBAR-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Weather</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!--NAVBAR-->
+
+    <!-- MAIN BODY -->
+    <div class="container py-3">
+        <header>
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                <h1 class="display-4 fw-normal text-body-emphasis">weather for <span id="cityName"></span></h1>
+                <p class="fs-5 text-body-secondary">Quickly build an effective pricing table for your potential
+                    customers with this Bootstrap example. It’s built with default Bootstrap components and utilities
+                    with little customization.</p>
+            </div>
+        </header>
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Temperature Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="temp"></span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Minimum Temperature is <span id="min_temp"></span></li>
+                                <li>Maximum Temperature is <span id="max_temp"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Humidity Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="humidity"></span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Cloud PTC is <span id="cloud_pct"></span></li>
+                                <li>feels Like <span id="feels_like"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm ">
+                        <div class="card-header py-3  ">
+                            <h4 class="my-0 fw-normal">wind and Sun Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="wind_speed"></span></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Sunrise Time is <span id="sunrise"></span></li>
+                                <li>Sunset Time is <span id="sunset"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="display-6 text-center mb-4">Other Major Cities</h2>
+
+            <div class="table-responsive">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th style="width: 22%;">cloud_pct</th>
+                            <th style="width: 22%;">temp</th>
+                            <th style="width: 22%;">feels_like</th>
+                            <th style="width: 22%;">humidity</th>
+                            <th style="width: 22%;">min_temp</th>
+                            <th style="width: 22%;">max_temp</th>
+                            <th style="width: 22%;">wind_speed</th>
+                            <th style="width: 22%;">sunrise</th>
+                            <th style="width: 22%;">sunset</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start">Mumbai </th>
+                            <td><span id="cloud_pct1"></span></td>
+                            <td><span id=temp1></span></td>
+                            <td><span id="feels_like1"></span></td>
+                            <td><span id="humidity1"></span></spann>
+                            </td>
+                            <td><span id="min_temp1"></span></td>
+                            <td><span id="max_temp1"></span></td>
+                            <td><span id="wind_speed1"></span></td>
+                            <td><span id="sunrise1"></span></td>
+                            <td><span id="sunset1"></span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">Tokyo</th>
+                            <td><span id="cloud_pct2"></span></td>
+                            <td><span id=temp2></span></td>
+                            <td><span id="feels_like2"></span></td>
+                            <td><span id="humidity2"></span></spann>
+                            </td>
+                            <td><span id="min_temp2"></span></td>
+                            <td><span id="max_temp2"></span></td>
+                            <td><span id="wind_speed2"></span></td>
+                            <td><span id="sunrise2"></span></td>
+                            <td><span id="sunset2"></span></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start">Pairs</th>
+                            <td><span id="cloud_pct3"></span></td>
+                            <td><span id=temp3></span></td>
+                            <td><span id="feels_like3"></span></td>
+                            <td><span id="humidity3"></span></spann>
+                            </td>
+                            <td><span id="min_temp3"></span></td>
+                            <td><span id="max_temp3"></span></td>
+                            <td><span id="wind_speed3"></span></td>
+                            <td><span id="sunrise3"></span></td>
+                            <td><span id="sunset3"></span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">London</th>
+                            <td><span id="cloud_pct4"></span></td>
+                            <td><span id=temp4></span></td>
+                            <td><span id="feels_like4"></span></td>
+                            <td><span id="humidity4"></span></spann>
+                            </td>
+                            <td><span id="min_temp4"></span></td>
+                            <td><span id="max_temp4"></span></td>
+                            <td><span id="wind_speed4"></span></td>
+                            <td><span id="sunrise4"></span></td>
+                            <td><span id="sunset4"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
